@@ -30,13 +30,13 @@ match (a:Game), (b:Publisher) where (a.name <> "The Sims 4" and a.name <> "Spore
 // 10. Знайсці ўсе гульні, якія з'яўляюцца сімулятарамі.
 
 // Запыты на мове cypher
-MATCH (n:Game) WHERE n.genre="Life simulator" RETURN n
-MATCH (n:Game) WHERE n.year >= 2010 RETURN n
-MATCH (n:Game) WHERE n.year >= 2008 AND n.year <= 2009 RETURN n
-MATCH (n:Game), (p:Publisher) WHERE p.name="Maxis" AND (n)-[:PUBLISHED_BY]->(p) RETURN n
-MATCH (n:Game), (p:Publisher) WHERE p.name="Alawar" AND (n)-[:PUBLISHED_BY]->(p) RETURN n
-MATCH (n) RETURN n
-MATCH (n:Game), (p:Publisher) WHERE p.name="Maxis" AND (n)-[:PUBLISHED_BY]->(p) RETURN n LIMIT 1
-MATCH (n:Game), (p:Publisher) WHERE p.name="Alawar" AND (n)-[:PUBLISHED_BY]->(p) RETURN n LIMIT 3
-MATCH (n:Game), (p:Publisher) WHERE p.name="Maxis" OR p.name="Alawar" AND (n)-[:PUBLISHED_BY]->(p) RETURN n LIMIT 5
-MATCH (n:Game) WHERE n.genre CONTAINS "simulator" RETURN n
+1. MATCH (n:Game) WHERE n.genre="Life simulator" RETURN n
+2. MATCH (n:Game) WHERE n.year >= 2010 RETURN n
+3. MATCH (n:Game) WHERE n.year >= 2008 AND n.year <= 2009 RETURN n
+4. MATCH (n:Game), (p:Publisher) WHERE p.name="Maxis" AND (n)-[:PUBLISHED_BY]->(p) RETURN n
+5. MATCH (n:Game), (p:Publisher) WHERE p.name="Alawar" AND (n)-[:PUBLISHED_BY]->(p) RETURN n
+6. MATCH (n) RETURN n
+7. MATCH (n:Game), (p:Publisher) WHERE p.name="Maxis" AND (n)-[:PUBLISHED_BY]->(p) RETURN n LIMIT 1
+8. MATCH (n:Game), (p:Publisher) WHERE p.name="Alawar" AND (n)-[:PUBLISHED_BY]->(p) RETURN n LIMIT 3
+9. MATCH (n:Game), (p:Publisher) WHERE p.name="Maxis" OR p.name="Alawar" AND (n)-[:PUBLISHED_BY]->(p) RETURN n LIMIT 5
+10. MATCH (n:Game) WHERE n.genre CONTAINS "simulator" RETURN n
