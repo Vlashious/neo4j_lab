@@ -8,3 +8,23 @@ create (g: Game {name: "Building & Co", year: 2008, genre: "Building simulator"}
 create (g: Game {name: "Алекс Гордон",  year: 2009, genre: "Platformer"})
 create (g: Game {name: "Гений обороны", year: 2010, genre: "Defense tower"})
 create (g: Game {name: "5 карточных королевств", year: 2009, genre: "Logic"})
+
+create (g: Publisher {name: "Maxis"})
+create (g: Publisher {name: "Alawar"})
+
+// Даданне адносін
+match (a:Game), (b:Publisher) where a.name="Spore" and b.name="Maxis" create (a)-[r:PUBLISHED_BY]->(b)
+match (a:Game), (b:Publisher) where a.name="The Sims 4" and b.name="Maxis" create (a)-[r:PUBLISHED_BY]->(b)
+match (a:Game), (b:Publisher) where (a.name <> "The Sims 4" and a.name <> "Spore") and b.name = "Alawar" create (a)-[r:PUBLISHED_BY]->(b)
+
+// Запыты
+// 1. Знайсці ўсе сімулятары жыцця.
+// 2. Знайсці ўсе гульні, якія выйшлі ў 2010 і пасля годзе.
+// 3. Знайсці ўсе гульні, якія выйшлі ў мяжах 2008-2009 гадоў.
+// 4. Знайсці ўсе гульні, якія былі апублікаваныя кампаніяй Maxis.
+// 5. Знайсці ўсе гульні, апублікаваныя кампаніяй Alawar.
+// 6. Атрымаць усю наяўную інфармацыю ў базе.
+// 7. Знайсці 1 гульню, апублікаваную кампаніяй Maxis.
+// 8. Знайсці 3 гульні, апублікаваныя кампаніяй Alawar.
+// 9. Знайсці 5 гульняў, апублікаваных ці кампаніяй Alawar, цi Maxis.
+// 10. Знайсці ўсе гульні, якія з'яўляюцца сімулятарамі.
